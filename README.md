@@ -2,6 +2,9 @@
 Untitled is personal blog
 <br>
 ![스크린샷 2023-05-15 114020](https://github.com/eelkom/Untitled/assets/103271836/950424ec-a5eb-415d-8127-da00d78e50a0)
+![스크린샷 2023-05-16 011208](https://github.com/eelkom/Untitled/assets/103271836/335e354d-3153-4595-8539-829b97a47bb8)
+![스크린샷 2023-05-16 011149](https://github.com/eelkom/Untitled/assets/103271836/b00a39bc-de32-41f5-8795-da9f9d28e49e)
+
 
 - commit type
 
