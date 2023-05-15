@@ -10,12 +10,6 @@
         container2 = document.querySelector('.list-container');
         flag = 1;
     }
-    // set footer 
-    if (document.body.clientHeight > window.innerHeight) {
-        const footer = document.querySelector('.footer');
-        footer.style.position = "absolute";
-        footer.style.bottom = "0";
-    }
 
     db.collection('post').orderBy('date', 'desc').get().then((snapShot) => {
         // let cnt = 1;
