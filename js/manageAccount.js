@@ -24,6 +24,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
     const auth = getAuth();
 
     // signUp 회원가입
+    const signUpContainer = document.querySelector('.signUp-container');
     const signUpEmail = document.querySelector('#signUpEmail');
     const signUpPassword = document.querySelector('#signUpPassword');
     const signUpButton = document.querySelector('#signUpButton');
@@ -37,17 +38,19 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
         e.preventDefault(); // 새로고침 방지
         const email = signUpEmail.value;
         const password = signUpPassword.value;
-        // console.log(email, password);
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
+                console.log(user);              
+                window.location.href = 'login.html';
+                alert(`welcome [${user.email}]`);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage);
+                alert('len(password) >= 6');
             });
     }
 
@@ -55,30 +58,32 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
         e.preventDefault(); // 새로고침 방지
         const email = signInEmail.value;
         const password = signInPassword.value;
-        console.log(email, password);
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
+                console.log(user);               
                 window.location.href = 'myPage.html';
+                alert(`welcome [${user.email}]`);
             })
             .catch((error) => {
-                console.log('error');
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+                alert('Let`s try again');
             });
     }
 
     function signOutUser(e) {
         signOut(auth).then(() => {
-            console.log('성공');
             signInButton.innerHTML = 'login';
             window.location.href = 'index.html';
+            alert('bye');
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode, errorMessage);
+            alert('error');
         });
     }
 
@@ -90,6 +95,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
             signInButton.innerHTML = "Sign Out";
             signInButton.removeEventListener('click', signIn);
             signInButton.addEventListener('click', signOutUser);
+            signUpContainer.innerHTML = '';
         } else {
             // 사용자가 로그아웃한 경우 또는 로그인하지 않은 경우
             signInButton.innerHTML = "Sign In";

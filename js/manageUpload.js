@@ -21,6 +21,7 @@
             //에러시 동작하는 함수
             (error) => {
                 console.error('실패사유는', error);
+                alert("제한된 접근입니다");
             },
             // 성공시 동작하는 함수
             () => {
@@ -43,7 +44,7 @@
             window.location.href = 'index.html';
         }
         const fail = (err) => {
-            alert("로그인 해주세요");
+            alert("제한된 접근입니다");
             console.log(err);
         }
     });
