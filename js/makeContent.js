@@ -12,7 +12,7 @@
     }
 
     db.collection('post').orderBy('date', 'desc').get().then((snapShot) => {
-        // let cnt = 1;
+        let cnt = 1;
         snapShot.forEach(doc => {
             const content = document.createElement('div');
             content.classList.add('content');
@@ -22,7 +22,10 @@
                 const content2 = document.createElement('div');
                 content2.classList.add('content2');
                 // content2.innerHTML = `<a href="post.html?id=${doc.id}">${doc.data().title}</a>&nbsp;&nbsp;${doc.data().summary}`;
-                content2.innerHTML = `<a href="post.html?id=${doc.id}">- ${doc.data().title}</a>&nbsp;&nbsp;by eelkom`;
+                if (cnt < 10) {
+                    cnt = cnt.toString().padStart(2, '0');
+                }
+                content2.innerHTML = `<a href="post.html?id=${doc.id}">${cnt}. ${doc.data().title}</a> &nbsp;&nbsp; by eelkom`;
                 container.appendChild(content);
                 container2.appendChild(content2);
                 // container2.p.style.fontSize = "70px";
@@ -30,7 +33,7 @@
                 container.appendChild(content);
             }
             // albumArtstemp.push(content);
-            // cnt++;
+            cnt++;
         });
         if (flag === 1) {
             const coverflowContainer = document.getElementsByClassName('coverflow-container');

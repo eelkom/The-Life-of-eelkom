@@ -43,6 +43,7 @@
             window.location.href = 'index.html';
         }
         const fail = (err) => {
+            alert("로그인 해주세요");
             console.log(err);
         }
     });
