@@ -1,5 +1,15 @@
 # Untitled
-Untitled is personal blog
+###Untitled is personal blog
+
+수정할 부분
+1. content 위치 통일 o
+2. login 한 사람만 글 작성 가능하게 o
+3. sign out 버튼 활성화 o
+4. 글 수정 기능 x
+5, about 작성 x
+6. 인터렉티브 요소 추가 o
+
+
 <br>
 ![스크린샷 2023-05-15 114020](https://github.com/eelkom/Untitled/assets/103271836/950424ec-a5eb-415d-8127-da00d78e50a0)
 ![스크린샷 2023-05-16 011208](https://github.com/eelkom/Untitled/assets/103271836/335e354d-3153-4595-8539-829b97a47bb8)
@@ -23,12 +33,14 @@ style : 코드 의미에 영향을 주지 않는 변경사항
 chore : 빌드 부분 혹은 패키지 매니저 수정사항
 
 특정 사용자만 글 작성 가능
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /yourCollection/{documentId} {
-      allow create: if request.auth != null && request.auth.uid == '특정 사용자 UID';
-      // 다른 규칙 및 액세스 권한 정의
+```javascript
+  rules_version = '2';
+  service cloud.firestore {
+    match /databases/{database}/documents {
+      match /yourCollection/{documentId} {
+        allow create: if request.auth != null && request.auth.uid == '특정 사용자 UID';
+        // 다른 규칙 및 액세스 권한 정의
+      }
     }
   }
-}
+```
