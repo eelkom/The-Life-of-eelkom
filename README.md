@@ -22,3 +22,13 @@ style : 코드 의미에 영향을 주지 않는 변경사항
 
 chore : 빌드 부분 혹은 패키지 매니저 수정사항
 
+특정 사용자만 글 작성 가능
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /yourCollection/{documentId} {
+      allow create: if request.auth != null && request.auth.uid == '특정 사용자 UID';
+      // 다른 규칙 및 액세스 권한 정의
+    }
+  }
+}
