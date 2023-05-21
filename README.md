@@ -14,11 +14,9 @@
    <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">  <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">
 
 ## Screen Shot
-<img src="https://github.com/eelkom/Untitled/assets/103271836/ac301b20-415f-488b-8356-249812142c64.png" width="900" height="auto"/>
-<!-- <img src="https://github.com/eelkom/Untitled/assets/103271836/014bd2f1-4445-45ad-8084-c587414bda4f.png" width="900" height="auto"/> -->
-<!-- <img src="https://github.com/eelkom/Untitled/assets/103271836/20f89c38-a895-4c20-9003-fef26e433f33.png" width="800" height="auto"/> -->
+<img src="https://github.com/eelkom/Untitled/assets/103271836/3f8fc408-6979-4b48-bed2-94fbac6c3d7d.png" />
+<img src="https://github.com/eelkom/Untitled/assets/103271836/f783d096-520d-479a-bb3e-dbab7168a0ac.gif" />
 
-<img src="https://github.com/eelkom/Untitled/assets/103271836/de97bf54-5a4e-4ff1-be59-7f0814dd0047.gif" width="900" height="auto"/>
 
 ## Firebase
 
