@@ -6,7 +6,7 @@
 ## Inspiration & Reference
 - [Caption] : Inspired by the captions next to the artworks, I created a personal blog that can explain my daily life and expressed one post in the form of a captions. ex) HTML canvas 20X20(px)
 
-- [The Life of Pablo] : Using the art of Kanye West's 7th album as a reference, the background color of the captions was set to coral and the subtitle "The Life of eelkom" was set
+- [The Life of Pablo] : Using the art of Kanye West's 7th album as a reference, the background color of the captions was set to coral and the subtitle "The Life of eelkom" was set.
 
 - [Coverflow] : I applied iTunes's coverflow function, which disappeared in 2012, to use the caption as an album art.
 
