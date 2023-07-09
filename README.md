@@ -1,23 +1,54 @@
-# Untitled
+# Untitled (my Blog)
 
-### Untitled is personal blog
+## Description
+- Untitled is personal blog
 
-- 수정할 부분
-> 1. content 위치 통일 o  
-> 2. login 한 사람만 글 작성 가능하게 o
-> 3. sign out 버튼 활성화 o
-> 4. 글 수정 기능 x
-> 5, about 작성 x
-> 6. 인터렉티브 요소 추가 o
+## Inspiration & Reference
+- [Caption] : Inspired by the captions next to the artworks, I created a personal blog that can explain my daily life and expressed one post in the form of a captions. ex) HTML canvas 20X20(px)
+
+- [The Life of Pablo] : Using the art of Kanye West's 7th album as a reference, the background color of the captions was set to coral and the subtitle "The Life of eelkom" was set.
+
+- [Coverflow] : I applied iTunes's coverflow function, which disappeared in 2012, to use the caption as an album art.
+
+## Development
+   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">  <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">
+
+## Screen Shot
+<img src="https://github.com/eelkom/Untitled/assets/103271836/3f8fc408-6979-4b48-bed2-94fbac6c3d7d.png" />
+<img src="https://github.com/eelkom/Untitled/assets/103271836/f783d096-520d-479a-bb3e-dbab7168a0ac.gif" />
 
 
-- screen Shot
+## Firebase
 
-![스크린샷 2023-05-15 114020](https://github.com/eelkom/Untitled/assets/103271836/950424ec-a5eb-415d-8127-da00d78e50a0)
+### Authentication
+- Sign In & Out / Sign Up
 
-
-
-- commit type
+### Firestore Database (Cloud Firestore)
+- Rules (Only certain users can write and modify posts)
+  ```javascript
+    rules_version = '2';
+    service cloud.firestore {
+      match /databases/{database}/documents {
+        match /myCollection/{documentId} {
+          allow create: if request.auth != null && request.auth.uid == '특정 사용자 UID';
+        }
+      }
+    }
+  ```
+### Storage
+- Rules (Only certain users can create and modify photos)
+  ```javascript
+    rules_version = '2';
+    service firebase.storage {
+      match /b/{bucket}/o {
+        match /{allPaths=**} {
+          allow read: if true;
+          allow write: if request.auth != null && request.auth.uid == "특정 사용자 UID";
+        }
+      }
+    }
+  ```
+## Git commit type
 
 > [Feat] : 새로운 기능 추가  
 > [Fix] : 버그 수정  
@@ -27,16 +58,8 @@
 > [Style] : 코드 의미에 영향을 주지 않는 변경사항  
 > [Chore] : 빌드 부분 혹은 패키지 매니저 수정사항  
 
-### Firebase
-- 특정 사용자만 글 작성 가능
-```javascript
-  rules_version = '2';
-  service cloud.firestore {
-    match /databases/{database}/documents {
-      match /yourCollection/{documentId} {
-        allow create: if request.auth != null && request.auth.uid == '특정 사용자 UID';
-        // 다른 규칙 및 액세스 권한 정의
-      }
-    }
-  }
-```
+## 추후 수정할 부분
+
+- about 페이지 작성
+- js class 모듈화
+
