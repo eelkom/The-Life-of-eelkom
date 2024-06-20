@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled-myPage</title>
+    <title>Untitled</title>
     <!-- get google font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
@@ -18,21 +18,15 @@
             <div class="main-nav">
                 <a href="index.html" class="logo">Untitled</a>
                 <a href="myPage.html">myPage</a>
-                <a href="login.html">login</a>
+                <a id="loginLink" href="login.html">login</a>
                 <a href="upload.html">write</a>
                 <a href="about.html">About.</a>
             </div>
         </div>
 
         <div class="main-container">
-            <div class="mypage-container">
-                <p style="font-size: 36px; font-weight: bold;">THE LIFE OF EELKOM</p>
-                <br>
-
-                <div class="coverflow-container" data-size="260" data-spacing="30" data-shadow="false" data-flat="false" data-width="1000">
-                </div>
-                <div class="list-container">
-                </div>
+            <div class="grid-container">
+                <!-- <div class="content">Untitled(2023.01)<br>by eelkom<br><br>HTML canvas 20X20(px)<br><br>It's about Aug.</div> -->
             </div>
         </div>
 
@@ -46,7 +40,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-
+    
     <script defer src="./js/main.js"></script>
     <script defer type="module" src="./js/firebase.js"></script>
     <script defer src="./js/makeContent.js"></script>
