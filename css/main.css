@@ -8,6 +8,8 @@ html {
 }
 
 body {
+    /* 가로 스크롤이 안 생기도록 */
+    overflow-x: hidden;
     letter-spacing: -0.05em;
     /* height: 100%; */
 }
