@@ -69,6 +69,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* 모바일 기기에서 가로 스크롤 방지 */
+    overflow-x: hidden;
 }
 
 .grid-container {
