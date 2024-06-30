@@ -69,8 +69,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* 모바일 기기에서 가로 스크롤 방지 */
-    overflow-x: hidden;
+    
 }
 
 .grid-container {
@@ -228,6 +227,9 @@ button {
     left: 0;
     right: 0;
     margin: auto;
+
+    /* 모바일 기기에서 가로 스크롤 방지 */
+    overflow-x: hidden;
 }
 /* scroll bar */
 .coverflow-container::-webkit-scrollbar {
