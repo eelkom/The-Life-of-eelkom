@@ -4,9 +4,9 @@
     let flag = 0; // container 선택을 위한 flag 변수 (myPage일 경우 flag = 1, mainPage일 경우 flag = 0)
 
     // page 구분, container 선택을 위한 if문
-    if (document.title === 'Untitled') {
+    if (document.title === 'Untitled-myPage') {
         container = document.querySelector('.grid-container');
-    } else if (document.title === 'Untitled-myPage') {
+    } else if (document.title === 'Untitled') {
         container = document.querySelector('.coverflow-container');
         container2 = document.querySelector('.list-container');
         flag = 1;
@@ -22,7 +22,7 @@
             content.classList.add('content');
             content.innerHTML = `<a href="post.html?id=${doc.id}">${doc.data().title} 
                 <br>by eelkom</a><p><br>HTML canvas<br>20X20(px)<br><br>${doc.data().summary}</p>`;
-            if (flag === 1) { // myPage일 경우
+            if (flag === 1) { // mainPage일 경우
                 if (cnt < 10) {
                     cnt = cnt.toString().padStart(2, '0');
                 }
@@ -75,7 +75,7 @@
             /*  transform: 요소의 변형(이동, 회전, 크기 조정 등)에 대한 전환 효과를 설정합니다.
                 margin-left: 요소의 왼쪽 여백에 대한 전환 효과를 설정합니다.
                 filter: 요소에 적용되는 필터(예: 그레이스케일, 투명도 조정 등)에 대한 전환 효과를 설정합니다. */
-            albumArtImgs[i].style.transition = "transform 0.8s ease, margin-left 0.6s ease, filter 0.6s ease";
+            albumArtImgs[i].style.transition = "transform 0.9s ease, margin-left 0.6s linear, filter 0.6s linear";
             imgHeight = Math.max(imgHeight, albumArtImgs[i].getBoundingClientRect().height) + 6; // 가장 큰 imgHeight를 구함, +6을 더해 이미지 사이 여백 추가
             // console.log(imgHeight);
         }
@@ -106,11 +106,11 @@
         // }
         
         // container dataset index 설정
-        c.dataset.index = index ? parseInt(index) : 2; // index == 3
+        c.dataset.index = index ? parseInt(index) : 0; // index == 3
 
         c.addEventListener('scroll', () => { // scroll event
             coverflowScroll(imgSize, spacing, c, albumArtImgs, flat);
-        });
+        }, { passive: true });
 
         for (let i = 0; i < albumArtImgs.length; i++) {
             albumArtImgs[i].addEventListener('click', () => { // click event
@@ -124,14 +124,15 @@
 
     function coverflowScroll(imgSize, spacing, c, albumArtImgs, flat) {
         let width = parseInt(c.style.width);
-        let p = 1.0 * c.scrollLeft / width; // c.scrollLeft는 스크롤의 왼쪽 끝으로부터 스크롤된 픽셀 수를 나타냅니다. 스크롤이 오른쪽으로 이동하면 c.scrollLeft의 값은 점점 증가하게 됩니다. (t실수형 반환 위해 1.0 곱)
+        let p = 1.0 * c.scrollLeft / width; // c.scrollLeft는 스크롤의 왼쪽 끝으로부터 스크롤된 픽셀 수를 나타냅니다. 스크롤이 오른쪽으로 이동하면 c.scrollLeft의 값은 점점 증가하게 됩니다. (t실수형 반환임을 명확히 하기 위해 1.0 곱)
         let index = Math.min(Math.floor(p * albumArtImgs.length), albumArtImgs.length - 1); // index 구하는 식
         /* 예를 들어, p가 0.6이고 imgs.length가 10인 경우:
         p * imgs.length는 0.6 * 10 = 6이 됩니다.
         Math.floor(6)은 6입니다. 따라서 이 경우에는 현재 보여지는 이미지의 인덱스는 6이 됩니다. */
+        // albumArtImgs.length - 1과 비교하는 이유는 index 값이 배열의 인덱스 범위를 벗어나지 않도록 보장하기 위함
         c.dataset.index = index;
         let left = c.scrollLeft;
-        console.log(width, p, index, left);
+        // console.log(width, p, index, left);
         displayIndex(imgSize, spacing, left, albumArtImgs, index, flat, width);
     }
 
@@ -149,7 +150,7 @@
         }
         albumArtImgs[index].style["-webkit-filter"] = "none";
         albumArtImgs[index].style.marginLeft = (mLeft + imgSize * 0.5) + "px";
-        albumArtImgs[index].style.zIndex = albumArtImgs.length;
+        albumArtImgs[index].style.zIndex = albumArtImgs.length; // INDEX의 이미지가 가장 우선 표기 되도록 설정
 
         setTransform3D(albumArtImgs[index], 0, 0, 5); // 해당 index의 elem 원근감, 회전 0으로 세팅
 

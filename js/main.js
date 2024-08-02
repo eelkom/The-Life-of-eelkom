@@ -21,7 +21,7 @@
         const innerHeight = window.innerHeight;
         // console.log(innerHeight, fullHeight);
         const footer = document.querySelector('.footer');
-        if (innerHeight > fullHeight) {            
+        if (innerHeight > fullHeight) {
             footer.style.position = "fixed";
             footer.style.bottom = "0";
         }
