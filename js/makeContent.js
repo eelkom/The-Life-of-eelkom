@@ -1,7 +1,7 @@
 (() => {
     const db = firebase.firestore();
     let container, container2;
-    let flag = 0; // container 선택을 위한 flag 변수 (myPage일 경우 flag = 1, mainPage일 경우 flag = 0)
+    let flag = 0; // container 선택을 위한 flag 변수 (mainPage일 경우 flag = 1, grid-view일 경우 flag = 0)
 
     // page 구분, container 선택을 위한 if문
     if (document.title === 'Untitled-myPage') {
@@ -75,7 +75,7 @@
             /*  transform: 요소의 변형(이동, 회전, 크기 조정 등)에 대한 전환 효과를 설정합니다.
                 margin-left: 요소의 왼쪽 여백에 대한 전환 효과를 설정합니다.
                 filter: 요소에 적용되는 필터(예: 그레이스케일, 투명도 조정 등)에 대한 전환 효과를 설정합니다. */
-            albumArtImgs[i].style.transition = "transform 0.9s ease, margin-left 0.6s linear, filter 0.6s linear";
+            albumArtImgs[i].style.transition = "transform 0.9s ease, margin-left 0.6s linear, filter 0.4s linear";
             imgHeight = Math.max(imgHeight, albumArtImgs[i].getBoundingClientRect().height) + 6; // 가장 큰 imgHeight를 구함, +6을 더해 이미지 사이 여백 추가
             // console.log(imgHeight);
         }
@@ -106,7 +106,7 @@
         // }
         
         // container dataset index 설정
-        c.dataset.index = index ? parseInt(index) : 0; // index == 3
+        c.dataset.index = index ? parseInt(index) : 1; // index == 3
 
         c.addEventListener('scroll', () => { // scroll event
             coverflowScroll(imgSize, spacing, c, albumArtImgs, flat);
@@ -177,6 +177,7 @@
     }
 
     window.onload = () => {
+        // 모든 content에 click event 부여
         const contents = document.querySelectorAll('.content');
         contents.forEach(content => {
             content.addEventListener('click', () => {

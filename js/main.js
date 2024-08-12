@@ -3,7 +3,7 @@
 
     window.addEventListener('scroll', () => {
         yOffset = window.pageYOffset;
-        checkNav();
+        checkNav();     
     });
 
     function checkNav() {
@@ -14,16 +14,20 @@
         }
     }
 
-    window.onload = () => {
-        // set footer 
+    function setFooter() {
+        // set footer
         const fullHeight = document.body.scrollHeight; // <body> 요소의 전체 높이를 반환
         // const offsetHeight = document.body.offsetHeight; // <body> 요소의 보여지는 영역의 높이를 반환
         const innerHeight = window.innerHeight;
         // console.log(innerHeight, fullHeight);
         const footer = document.querySelector('.footer');
-        if (innerHeight > fullHeight) {
+        if (innerHeight >= fullHeight) {
             footer.style.position = "fixed";
             footer.style.bottom = "0";
         }
+    }
+
+    window.onload = () => {
+        setFooter();
     };
 })();
