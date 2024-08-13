@@ -238,19 +238,16 @@ button {
 }
 
 .coverflow-container {
-    position: relative;
-    /* 위치 조정을 위해 상대적으로 설정 */
+
     left: 0;
     right: 0;
     margin: auto;
     width: 100%;
     /* 모바일 기기에서 가로 스크롤 방지 */
-    overflow-x: scroll;
+    overflow-x: hidden;
     /* overflow-x를 scroll로 변경 */
     -webkit-overflow-scrolling: touch;
     /* iOS에서 스크롤이 부드럽게 동작하도록 설정 */
-    border-bottom: 1px solid #ccc;
-    /* 스크롤 영역을 구분하는 테두리 */
 }
 
 /* .titleBox {
