@@ -243,9 +243,6 @@ button {
     right: 0;
     margin: auto;
     width: 100%;
-    /* 모바일 기기에서 가로 스크롤 방지 */
-    overflow-x: hidden;
-    /* overflow-x를 scroll로 변경 */
     -webkit-overflow-scrolling: touch;
     /* iOS에서 스크롤이 부드럽게 동작하도록 설정 */
 }
