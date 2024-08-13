@@ -233,24 +233,28 @@ button {
     max-width: 1000px;
     margin-right: 50px;
     margin: auto;
+
+    width: 100%;
 }
 
 .coverflow-container {
-    /* max-width: 1000px; */
+    position: relative; /* 위치 조정을 위해 상대적으로 설정 */
     left: 0;
     right: 0;
     margin: auto;
-
+    width: 100%; 
     /* 모바일 기기에서 가로 스크롤 방지 */
-    overflow-x: hidden;
+    overflow-x: scroll; /* overflow-x를 scroll로 변경 */
+    -webkit-overflow-scrolling: touch; /* iOS에서 스크롤이 부드럽게 동작하도록 설정 */
+    border-bottom: 1px solid #ccc; /* 스크롤 영역을 구분하는 테두리 */
 }
 
-.titleBox {
+/* .titleBox {
     text-align: center;
     font-size: 14px;
     margin-top: 10px;
     color: #333; /* 원하는 색상으로 변경 가능 */
-}
+
 
 /* scroll bar */
 .coverflow-container::-webkit-scrollbar {
@@ -312,3 +316,10 @@ button {
 }
 
 /* -------------- mypage-container -------------- */ 
+
+/* 1024px 보다 커지면(데스크탑 용) */
+@media (min-width: 1024px) {
+    .coverflow-container {
+        width: 1000px;
+    }
+}
