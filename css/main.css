@@ -78,18 +78,18 @@ a {
 }
 
 .grid-container {
-    padding-top: 17vh;
+    padding-top: 5vh;
     padding-bottom: 5vh;
     display: grid;
-    width: 80%; /* cnrk */
+    /* width: 80%; */
     /* align-items: center; */
-    justify-content: center;
+    /* justify-content: center; */
 
     /* grid-template-columns: 200px 200px 200px;
     grid-template-rows: 200px 200px 200px; */
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 4px;
     /* row-gap: 20px; column-gap: 20px; */
 }
 
