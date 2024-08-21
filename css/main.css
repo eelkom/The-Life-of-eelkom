@@ -81,8 +81,9 @@ a {
     padding-top: 17vh;
     padding-bottom: 5vh;
     display: grid;
+    width: 80%; /* cnrk */
     /* align-items: center; */
-    /* justify-content: center; */
+    justify-content: center;
 
     /* grid-template-columns: 200px 200px 200px;
     grid-template-rows: 200px 200px 200px; */
@@ -131,7 +132,7 @@ a {
 /* -------------- upload-container -------------- */
 
 .upload-container {
-    padding-top: 20vh;
+    padding-top: 13vh;
     display: flex;
     /* align-items: center; */
     justify-content: center;
@@ -234,7 +235,7 @@ button {
     margin-right: 50px;
     margin: auto;
 
-    width: 100%;
+    /* width: 100%; */
 }
 
 .coverflow-container {
@@ -242,7 +243,7 @@ button {
     left: 0;
     right: 0;
     margin: auto;
-    width: 100%;
+    /* width: 100%; */
     -webkit-overflow-scrolling: touch;
     /* iOS에서 스크롤이 부드럽게 동작하도록 설정 */
 }
@@ -324,5 +325,24 @@ button {
     .aboutMe-container,
     .mypage-container {
         padding-top: 17vh;
+    }
+
+    .upload-container {
+        padding-top: 20vh;
+    }
+
+    .grid-container {
+        padding-top: 17vh;
+        padding-bottom: 5vh;
+        display: grid;
+        /* align-items: center; */
+        /* justify-content: center; */
+    
+        /* grid-template-columns: 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px; */
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px;
+        /* row-gap: 20px; column-gap: 20px; */
     }
 }

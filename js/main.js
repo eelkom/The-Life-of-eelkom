@@ -1,10 +1,12 @@
 (() => {
     let yOffset = 0; // window.pageYOffset 값 담을 변수
+    // let container = document.querySelector('.coverflow-container');
 
     window.addEventListener('scroll', () => {
         yOffset = window.pageYOffset;
         checkNav();     
     });
+    window.addEventListener('resize', adjustCoverflowWidth);
 
     function checkNav() {
         if (yOffset > 0) {
@@ -26,8 +28,19 @@
             footer.style.bottom = "0";
         }
     }
+    
+    function adjustCoverflowWidth() {
+        const mypageContainer = document.querySelector('.mypage-container');
+        const coverflowContainer = document.querySelector('.coverflow-container');
+        
+        // mypage-container의 너비를 coverflow-container에 적용
+        const newWidth = mypageContainer.clientWidth;
+        coverflowContainer.style.width = `${newWidth}px`;
+        // initCoverFlow(container);
+    }
 
     window.onload = () => {
         setFooter();
+        adjustCoverflowWidth();
     };
 })();

@@ -17,6 +17,10 @@
     db.collection('post').orderBy('date', 'desc').get().then((snapShot) => {
         let cnt = 1; // content2 요소 count용 변수
         snapShot.forEach(doc => {
+            // titleBox
+            // const titleBox = document.createElement('div');
+            // titleBox.innerHTML = doc.data().title;
+            // container.appendChild(titleBox);
             // content 요소 생성
             const content = document.createElement('div');
             content.classList.add('content');
@@ -187,4 +191,6 @@
             });
         });
     };
+
+    // window.onresize = initCoverFlow;
 })();
