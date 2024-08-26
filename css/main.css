@@ -1,7 +1,17 @@
 @charset 'utf-8';
+@font-face {
+    font-family: 'Noto Sans KR', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap");
+}
+
+/* @supports (-webkit-touch-callout: none) {
+    body {
+        font-weight: 700; /* Safari에서만 적용 */
+    /* } */
+/* } */
 
 html {
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
     /* html 루느 노드의 font-size */
     font-size: 14px;
     /* height: 100%; */
@@ -58,7 +68,7 @@ a {
 .main-nav .logo {
     margin-right: auto;
     font-size: 1.4rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .main-nav a:not(.logo) {
