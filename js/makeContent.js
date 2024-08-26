@@ -49,6 +49,7 @@
 
     function initCoverFlow(c) {
         const windowWidth = window.innerWidth;
+        let imgSize;
 
         if (windowWidth < 600) {
             imgSize = 200;
@@ -120,7 +121,7 @@
         // }
         
         // container dataset index 설정
-        c.dataset.index = index ? parseInt(index) : 1; // index == 3
+        c.dataset.index = index ? parseInt(index) : 0; // index == 3
 
         c.addEventListener('scroll', () => { // scroll event
             coverflowScroll(imgSize, spacing, c, albumArtImgs, flat);
