@@ -48,10 +48,20 @@
     });
 
     function initCoverFlow(c) {
+        const windowWidth = window.innerWidth;
+
+        if (windowWidth < 600) {
+            imgSize = 200;
+        } else if (windowWidth < 1200) {
+            imgSize = 200;
+        } else {
+            imgSize = 260;
+        }
+
         const albumArtImgs = []; // album art 담을 ary
         // html내 data-set 값 가져오기
-        let imgSize = parseInt(c.dataset.size) || 64, // imgSize == 260
-            spacing = parseInt(c.dataset.spacing) || 10, // spacing == 30
+        // let imgSize = parseInt(c.dataset.size) || 64, // imgSize == 260
+        let spacing = parseInt(c.dataset.spacing) || 10, // spacing == 30
             shadow = c.dataset.shadow === "true", // shadow == false
             // imgShadow = c.dataset.imgshadow !== "false", // imgShadow == true
             flat = c.dataset.flat === "true", // flat == false

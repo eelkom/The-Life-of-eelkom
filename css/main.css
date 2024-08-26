@@ -105,8 +105,8 @@ a {
 
 .content {
     background-color: coral;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     padding: 0.5em 0.5em;
 }
 
@@ -358,5 +358,12 @@ button {
         font-size: 23px;
         /* font-style:italic; */
         font-weight: bold;
+    }
+
+    .content {
+        background-color: coral;
+        height: 150px;
+        width: 150px;
+        padding: 0.5em 0.5em;
     }
 }
