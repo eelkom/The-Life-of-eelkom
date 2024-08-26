@@ -335,14 +335,49 @@ button {
     padding-top: 10vh;
     display: flex;
     /* align-items: center; */
-    /* justify-content: center; */
+    justify-content: center;
     flex-direction: column;
     max-width: 1000px;
-    margin-right: 50px;
     margin: auto;
 }
 
 /* -------------- aboutMe-containe -------------- */
+
+
+/* -------------- piano-containe -------------- */
+.piano-container {
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.piano {
+    padding-top: 3vh;
+    display: grid; 
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 0.1fr 0.1fr 0.1fr;
+}
+.key {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    border: 1.5px solid white;
+    border-radius:10px;
+    font-weight: bold;
+}
+
+.key.active {
+    background-color: ghostwhite;
+}
+
+/* -------------- piano-containe -------------- */
 
 /* 1024px 보다 커지면(데스크탑 용) */
 @media (min-width: 1024px) {
