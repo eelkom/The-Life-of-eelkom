@@ -63,7 +63,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);               
-                window.location.href = 'myPage.html';
+                window.location.href = 'index.html';
                 alert(`welcome [${user.email}]`);
             })
             .catch((error) => {

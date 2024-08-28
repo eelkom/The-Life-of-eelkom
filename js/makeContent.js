@@ -51,12 +51,10 @@
         const windowWidth = window.innerWidth;
         let imgSize;
 
-        if (windowWidth < 600) {
-            imgSize = 200;
-        } else if (windowWidth < 1200) {
+        if (windowWidth < 1024) {
             imgSize = 200;
         } else {
-            imgSize = 260;
+            imgSize = 230;
         }
 
         const albumArtImgs = []; // album art 담을 ary
