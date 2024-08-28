@@ -5,10 +5,10 @@
      이러한 보안 정책은 사용자 경험 및 개인 정보 보호를 위해 적용되고 있습니다.
      따라서, AudioContext를 시작하기 전에 사용자의 명시적인 동작을 요구해야 합니다. 
     */
-    window.addEventListener('click', initAudioContext);
 
     function initAudioContext() {
         document.removeEventListener('click', initAudioContext);
+        document.removeEventListener('touchstart', initAudioContext);
 
         // 1. 오디오 컨텍스트 생성
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -21,6 +21,8 @@
             key.addEventListener('mousedown', handleKeyEvent);
             key.addEventListener('mouseup', handleKeyEvent);
             key.addEventListener('mouseleave', handleKeyEvent);
+            key.addEventListener('touchstart', handleKeyEvent); // 터치 시작 이벤트 추가
+            key.addEventListener('touchend', handleKeyEvent);   // 터치 끝 이벤트 추가
 
             // 키보드와 피아노 매핑을 위한 데이터 속성 추가
             const keyMapping = getKeyMapping(index);
@@ -55,7 +57,7 @@
                         releaseNoteByKey(this.dataset.note);
                     }
                 }
-                pianoKey.classList.toggle('active', event.type === 'keydown' || event.type === 'mousedown');
+                pianoKey.classList.toggle('active', event.type === 'keydown' || event.type === 'mousedown' || event.type === 'touchstart');
             }
         }
 
@@ -83,7 +85,9 @@
         }
         function releaseNoteByKey(note) {
             const activeKey = document.querySelector(`[data-note=${note}]`);
-            activeKey.classList.remove('active');
+            if (activeKey) {
+                activeKey.classList.remove('active');
+            }
         }
 
         // 음에 해당하는 주파수 가져오기
@@ -100,13 +104,9 @@
             };
             return frequencies[note];
         }
-        // <div class="key" data-note="C">E</div>
-        // <div class="key" data-note="D">downE</div>
-        // <div class="key" data-note="E">D#</div>
-        // <div class="key" data-note="F">dD#</div>
-        // <div class="key" data-note="G">C#</div>
-        // <div class="key" data-note="A">dC#</div>
-        // <div class="key" data-note="B">A</div>
-        // <div class="key" data-note="upC">G#</div>
     }
+
+    // 사용자 제스처에 의해 오디오 컨텍스트를 초기화
+    document.addEventListener('click', initAudioContext);
+    document.addEventListener('touchstart', initAudioContext); // 터치 이벤트 추가
 })();
