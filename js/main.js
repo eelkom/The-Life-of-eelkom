@@ -6,7 +6,7 @@
         yOffset = window.pageYOffset;
         checkNav();     
     });
-    window.addEventListener('resize', adjustCoverflowWidth);
+    // window.addEventListener('resize', adjustCoverflowWidth);
 
     function checkNav() {
         if (yOffset > 0) {
@@ -29,18 +29,18 @@
         }
     }
     
-    function adjustCoverflowWidth() {
-        const mypageContainer = document.querySelector('.mypage-container');
-        const coverflowContainer = document.querySelector('.coverflow-container');
+    // function adjustCoverflowWidth() {
+    //     const mypageContainer = document.querySelector('.mypage-container');
+    //     const coverflowContainer = document.querySelector('.coverflow-container');
         
-        // mypage-container의 너비를 coverflow-container에 적용
-        const newWidth = mypageContainer.clientWidth;
-        coverflowContainer.style.width = `${newWidth}px`;
-        // initCoverFlow(container);
-    }
+    //     // mypage-container의 너비를 coverflow-container에 적용
+    //     const newWidth = mypageContainer.clientWidth;
+    //     coverflowContainer.style.width = `${newWidth}px`;
+    //     // initCoverFlow(container);
+    // }
 
     window.onload = () => {
         setFooter();
-        adjustCoverflowWidth();
+        // adjustCoverflowWidth();
     };
 })();
