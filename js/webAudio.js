@@ -45,10 +45,14 @@
 
                 if (isPlaying) {
                     playNoteByKey(sound);
-                } 
-                // else {
-                //     releaseNoteByKey(sound);
-                // }
+                }
+                else {
+                    const stopDelay = 2800; // 소리를 정지할 시간 (밀리초 단위, 예: 2000ms = 2초)
+                    setTimeout(() => {
+                        releaseNoteByKey(audioElement);
+                    }, stopDelay);
+                    // releaseNoteByKey(sound);
+                }
 
                 if (pianoKey) {
                     pianoKey.classList.toggle('active', isPlaying);
@@ -59,11 +63,6 @@
         function playNoteByKey(audioElement) {
             audioElement.currentTime = 0.13; // 오디오를 처음부터 시작s
             audioElement.play();
-
-            const stopDelay = 3000; // 소리를 정지할 시간 (밀리초 단위, 예: 2000ms = 2초)
-            setTimeout(() => {
-                releaseNoteByKey(audioElement);
-            }, stopDelay);
         }
 
         function releaseNoteByKey(audioElement) {
