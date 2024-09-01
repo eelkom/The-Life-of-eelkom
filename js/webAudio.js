@@ -4,6 +4,7 @@
     let audioContext; // 오디오 컨텍스트를 전역적으로 선언
     let currentlyPlaying = null; // 현재 재생 중인 오디오 추적
     let sustainTime = 3000; // 서스테인 시간 (밀리초 단위로 설정, 예: 2000ms = 2초)
+    let sustainTimer = null; // 서스테인 타이머 ID를 저장
 
     function initAudioContext() {
         if (audioContextInitialized) return; // 이미 초기화되었으면 종료
@@ -46,7 +47,7 @@
         } else if (event.type === 'touchend') {
             activeTouches.delete(touch.identifier);
             event.target.classList.remove('active');
-            setTimeout(() => {
+            sustainTimer = setTimeout(() => {
                 releaseNoteByKey(sound);
             }, sustainTime);
         }
@@ -68,7 +69,7 @@
             stopCurrentSound(); // 현재 재생 중인 소리 중지
             playNoteByKey(sound);
         } else {
-            setTimeout(() => {
+            sustainTimer = setTimeout(() => {
                 releaseNoteByKey(sound);
             }, sustainTime);
         }
@@ -96,6 +97,11 @@
         if (currentlyPlaying) {
             releaseNoteByKey(currentlyPlaying);
             currentlyPlaying = null;
+        }
+
+        if (sustainTimer) {
+            clearTimeout(sustainTimer); // 서스테인 타이머를 무효화하여 예정된 작업을 취소
+            sustainTimer = null;
         }
     }
 
