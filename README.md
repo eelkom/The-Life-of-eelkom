@@ -4,7 +4,7 @@
 - Untitled is personal blog
 
 ## link
-https://eelkom.github.io/Untitled/
+- https://eelkom.github.io/Untitled/
 
 ## Inspiration & Reference
 - [Caption] : Inspired by the captions next to artworks, I created a personal blog to showcase my life through captions.
