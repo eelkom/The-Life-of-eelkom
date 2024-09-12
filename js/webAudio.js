@@ -69,7 +69,7 @@
             stopCurrentSound(); // 현재 재생 중인 소리 중지
             playNoteByKey(sound);
         } else {
-            sustainTimer = setTimeout(() => {
+            setTimeout(() => {
                 releaseNoteByKey(sound);
             }, sustainTime);
         }
