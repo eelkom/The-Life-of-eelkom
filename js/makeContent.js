@@ -38,7 +38,7 @@
             }
             cnt++;
         });
-        if (flag === 1) { // myPage일 경우 // coverflow 효과 생성
+        if (flag === 1) { // coverflow 효과 생성
             initCoverFlow(mainContainer); // container = document.querySelector('.coverflow-container');
         }
     });
@@ -47,9 +47,7 @@
         // Coverflow setting value
         const spacing = 30; // Spacing between captions
         const width = 1000; // Width of coverflow container 
-        // Todo: 추후 수정
-        let index = 0; // To show from captions[0]
-
+        const index = 0; // To show from captions[0]
         const captions = []; // Array for captions
         const windowWidth = window.innerWidth;
         let captionSize = 0;
@@ -61,7 +59,7 @@
         }
 
         // coverflow-container style 속성 적용
-        c.style.position = "relative"; // 부모 컨테이너(coverflow-container)의 속성을 relative로 설정
+        c.style.position = "relative";
         c.style.overflowX = "auto";
         c.style.width = width + "px";
         c.style.height = (captionSize + 120) + "px";
@@ -77,12 +75,12 @@
             captions[i].style.height = captionSize + "px";
             captions[i].style.bottom = "60px"; // 요소의 bottom 시작 위치 설정(position과 함께 사용)
             captions[i].style.boxShadow = "0px 30px 20px rgba(0, 0, 0, 0.3)";
-            captions[i].style.transition = "transform 0.9s ease, margin-left 0.6s linear, filter 0.4s linear";
+            captions[i].style.transition = "transform 0.9s ease, margin-left 0.6s linear, filter 0.4s ease";
         }
 
         const placeholding = document.createElement("div");
-        placeholding.style.width = (width * 3) + "px";
-        placeholding.style.height = "1px"; // 실제 컨텐츠를 갖지 않기에 최소한의 높이로 설정
+        placeholding.style.width = (width * 2) + "px";
+        placeholding.style.height = "1px";
         c.appendChild(placeholding);
 
         c.addEventListener('scroll', () => {
@@ -106,31 +104,29 @@
     }
 
     function displayIndex(captionSize, spacing, sLeft, captions, index, width) {
-        let mLeft = (width - captionSize) * 0.5 - spacing * (index) - captionSize * 0.5; 
+        let mLeft = ((width - captionSize) * 0.5) - (spacing * index);
+
         for (let i = 0; i < index; i++) {
             captions[i].style.left = (sLeft + i * spacing) + "px";
-            captions[i].style.marginLeft = mLeft + "px"; 
+            captions[i].style.marginLeft = (mLeft - captionSize * 0.5) + "px";
             captions[i].style["-webkit-filter"] = "brightness(0.65)";
             captions[i].style.zIndex = i + 1;
-            // console.log("i=", i, "left=", captions[i].style.left, "mLeft=", captions[i].style.marginLeft);
-            setTransform3D(captions[i], ((index - i) * 10 + 45), 300, (-(index - i) * 30 - 20));
+            setTransform3D(captions[i], ((index - i) * 10 + 45), 300, (-(index - i) * 30 - 18));
         }
+
         captions[index].style.left = (sLeft + index * spacing) + "px";
         captions[index].style["-webkit-filter"] = "none";
-        captions[index].style.marginLeft = (mLeft + captionSize * 0.5) + "px";
+        captions[index].style.marginLeft = mLeft + "px";
         captions[index].style.zIndex = captions.length;
-        // console.log("index=", index, "left=", captions[index].style.left, "mLeft=", captions[index].style.marginLeft);
         setTransform3D(captions[index], 0, 0, 5);
 
         for (let i = index + 1; i < captions.length; i++) {
             captions[i].style.left = (sLeft + i * spacing) + "px";
-            captions[i].style.marginLeft = (mLeft + captionSize) + "px";
+            captions[i].style.marginLeft = (mLeft + captionSize * 0.5) + "px";
             captions[i].style["-webkit-filter"] = "brightness(0.65)";
             captions[i].style.zIndex = captions.length - i;
-            // console.log("i=", i, "left=", captions[i].style.left, "mLeft=", captions[i].style.marginLeft);
-            setTransform3D(captions[i], ((index - i) * 10 - 45), 300, ((index - i) * 30 - 20));
+            setTransform3D(captions[i], ((index - i) * 10 - 45), 300, ((index - i) * 30 - 18));
         }
-        // console.log("-----------------")
     }
 
     function setTransform3D(elem, degree, perspective, z) {
