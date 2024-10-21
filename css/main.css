@@ -78,7 +78,6 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 950px;
     margin-right: 50px;
     margin: auto;
 }
