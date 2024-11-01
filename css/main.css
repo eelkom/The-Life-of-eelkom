@@ -289,7 +289,7 @@ button {
 
 
 /* -------------- piano-containe -------------- */
-.piano-container {
+.soundboard-container {
     padding-top: 10vh;
     padding-bottom: 5vh;
     display: flex;
@@ -297,7 +297,7 @@ button {
     justify-content: center;
     flex-direction: column;
 }
-.piano {
+.soundboard {
     padding-top: 3vh;
     display: grid; 
     align-items: center;
