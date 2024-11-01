@@ -313,7 +313,7 @@ button {
     grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr;
 }
 .key,
-.content {
+.soundboard2 .content {
     display: flex; 
     align-items: center;
     justify-content: center;
