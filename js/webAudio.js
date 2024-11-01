@@ -28,7 +28,6 @@
     ];
     const soundMap = ['q', 'w', 'e', 'r', 'a', 's', 'd', 'f', 't', 'y', 'u', 'i', 'g', 'h', 'j', 'k', 'z', 'x', 'undefined'];
     const audioElements2 = {};
-    const START_TIME2 = 0;
 
     function init() {
         const c = document.querySelector(".soundboard");
@@ -89,7 +88,7 @@
             //Create audioElem
             let audioElem = new Audio(`audio_daft/${sounds[i]}.wav`);
             audioElem.type = 'audio/wav';
-            audioElements[soundMap[i]] = audioElem;
+            audioElements2[soundMap[i]] = audioElem;
 
             // content style
             content.style.perspective = '600px';
