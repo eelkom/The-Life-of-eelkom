@@ -1,10 +1,10 @@
 # Untitled (my Blog)
 
 ## Description
-- Untitled is personal blog
+- Untitled is my personal blog
 
 ## link
-- https://eelkom.github.io/Untitled/
+https://untitled-eelkoms-projects.vercel.app/
 
 ## Inspiration & Reference
 - [Caption] : Inspired by the captions next to artworks, I created a personal blog to showcase my life through captions.
