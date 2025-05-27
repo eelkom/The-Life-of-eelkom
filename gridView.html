@@ -1,59 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Untitled-gridView</title>
     <!-- get google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/default.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="nav-container">
-            <div class="main-nav">
-                <a href="index.html" class="logo">Untitled</a>
-                <a href="index.html">main</a>
-                <a id="loginLink" href="login.html">login</a>
-                <a href="upload.html">write</a>
-                <a href="about.html">About.</a>
-            </div>
+      <div class="nav-container">
+        <div class="main-nav">
+          <a href="index.html" class="logo">Untitled</a>
+          <a href="index.html">main</a>
+          <a id="loginLink" href="login.html">login</a>
+          <a href="upload.html">write</a>
+          <a href="about.html">About.</a>
         </div>
+      </div>
 
-        <div class="main-container">
-            <div class="mypage-container">
-                <p style="font-size: 36px; font-weight: 700;">THE LIFE OF EELKOM</p>
-                <br>
-
-                <div class="grid-container">
-                    <!-- <p style="font-size: 36px; font-weight: bold;">THE LIFE OF EELKOM</p> -->
-                    <!-- <div class="content">Untitled(2023.01)<br>by eelkom<br><br>HTML canvas 20X20(px)<br><br>It's about Aug.</div> -->
-                </div>
-            </div>
-            <!-- <div class="grid-container"> -->
-            <!-- <p style="font-size: 36px; font-weight: bold;">THE LIFE OF EELKOM</p> -->
-            <!-- <div class="content">Untitled(2023.01)<br>by eelkom<br><br>HTML canvas 20X20(px)<br><br>It's about Aug.</div> -->
-            <!-- </div> -->
+      <div class="main-container">
+        <div class="mypage-container">
+          <p style="font-size: 36px; font-weight: 700">THE LIFE OF EELKOM</p>
+          <br />
+          <div class="grid-container"></div>
         </div>
+      </div>
 
-        <footer class="footer">
-            2023, CHANGMOK LEE.
-        </footer>
+      <footer class="footer">2023, CHANGMOK LEE.</footer>
     </div>
 
-    <!-- script for firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-
     <script defer src="./js/main.js"></script>
-    <script defer type="module" src="./js/firebase.js"></script>
-    <script defer src="./js/makeContent.js"></script>
-</body>
-
+    <script defer type="module" src="./js/gridView/loadGridView.js"></script>
+  </body>
 </html>
