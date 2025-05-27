@@ -107,9 +107,12 @@ a {
 }
 
 .coverflow-container .content {
+    /* background-color: coral; */
     background-color: coral;
     padding: 0.5em 0.5em;
+    /* border-radius: 10px; */
 }
+/* #47e1f6 */
 
 .coverflow-container .content a {
     font-size: 18px;
@@ -247,6 +250,7 @@ button {
     max-width: 700px;
     width: 90vw;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .post-container button {
