@@ -1,4 +1,4 @@
-import { loadPosts } from "../firebase/postService.js";
+import { loadPosts } from "../firebase/services/getPostService.js";
 import drawCoverflow from "./drawCoverflow.js";
 
 async function loadCoverflow() {
