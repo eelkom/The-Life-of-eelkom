@@ -7,6 +7,7 @@ const contentInput = document.querySelector("#content");
 const summaryInput = document.querySelector("#summary");
 const imageInput = document.querySelector("#image");
 
+// TODO: 업로드 오류 수정하기기
 button.addEventListener("click", async () => {
   try {
     const image = imageInput.files[0];
