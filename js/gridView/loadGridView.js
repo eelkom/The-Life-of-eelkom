@@ -1,4 +1,4 @@
-import { loadPosts } from "../firebase/postService.js";
+import { loadPosts } from "../firebase/services/getPostService.js";
 
 async function loadGridView() {
   const gridContainer = document.querySelector(".grid-container");
