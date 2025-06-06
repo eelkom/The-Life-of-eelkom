@@ -1,0 +1,379 @@
+@charset 'utf-8';
+@font-face {
+  font-family: "Noto Sans KR", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap");
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  /* 가로 스크롤이 안 생기도록 */
+  overflow-x: hidden;
+  letter-spacing: -0.05em;
+}
+
+a {
+  color: black;
+  /* 링크 및줄 제거 */
+  text-decoration: none;
+}
+
+.container {
+  /* 모바일 기기에서 가로 스크롤 방지 */
+  overflow-x: hidden;
+}
+
+/* -------------- nav setting -------------- */
+
+.nav-sticky .nav-container {
+  position: fixed;
+  top: 0;
+}
+
+.nav-container {
+  /* position: absolute 일때는 강제로 width 늘려줘야함 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 11;
+  height: 44px;
+  padding: 0 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.main-nav .logo {
+  margin-right: auto;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.main-nav a:not(.logo) {
+  margin-left: 2rem;
+  font-size: 0.9em;
+}
+
+/* -------------- common ground -------------- */
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mypage-container {
+  padding-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 50px;
+  margin: auto;
+}
+
+.footer {
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* -------------- main page(index.html) -------------- */
+
+.coverflow-container {
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* iOS에서 스크롤이 부드럽게 동작하도록 설정 */
+  -webkit-overflow-scrolling: touch;
+}
+
+.coverflow-container .content {
+  /* background-color: coral; */
+  background-color: coral;
+  padding: 0.5em 0.5em;
+  /* border-radius: 10px; */
+}
+/* #47e1f6 */
+
+.coverflow-container .content a {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.coverflow-container .content p {
+  font-size: 16px;
+  font-style: normal;
+}
+
+.list-container {
+  padding: 1vh 0;
+  max-width: 1000px;
+  line-height: 1.3;
+}
+
+.list-container .content2 {
+  padding-top: 1vh;
+}
+
+.list-container .content2 a {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+/* scroll bar */
+.coverflow-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.coverflow-container::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 5px solid transparent;
+}
+
+.coverflow-container::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+/* -------------- grid-view page(myPage.html) -------------- */
+
+.grid-container {
+  /* 수정하기 */
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2px;
+}
+
+.grid-container .content {
+  background-color: coral;
+  height: 127px;
+  width: 127px;
+  padding: 0.5em 0.5em;
+}
+
+.grid-container .content:hover {
+  transform: scale(0.98);
+}
+
+.grid-container .content a {
+  font-size: 11.5px;
+  font-style: italic;
+  font-weight: 505;
+}
+
+.grid-container .content p {
+  font-size: 10.5px;
+  font-style: oblique;
+}
+
+/* -------------- write page(upload.html) -------------- */
+
+.upload-container {
+  padding-top: 7vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 700px;
+  width: 75vw;
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border-radius: 3px;
+  border: 1.5px solid;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+
+#uploadButton {
+  color: coral;
+  margin-bottom: 20px;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+/* -------------- post page(post.html) -------------- */
+
+.post-container {
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 40vw;
+}
+
+/* .post-container img {
+    height: auto;
+    margin: 0 auto;
+} */
+
+.post-container p {
+  max-width: 700px;
+  width: 90vw;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.post-container button {
+  margin-left: 700px;
+  font-size: smaller;
+  color: grey;
+}
+
+.posting .image-container {
+  aspect-ratio: 100%;
+  overflow: hidden;
+}
+
+.posting .image-container img {
+  width: 100%;
+  filter: blur(10px);
+  transition: filter 0.5s ease;
+  display: block;
+  object-fit: cover;
+}
+
+.posting .image-container img.loaded {
+  filter: blur(0px);
+}
+
+/* -------------- login page(login.html) -------------- */
+
+.signIn-container,
+.signUp-container {
+  padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1000px;
+}
+
+#signInButton,
+#signUpButton {
+  color: coral;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* -------------- about page(about.html) -------------- */
+
+.aboutMe-container {
+  padding-top: 9vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* -------------- piano-containe -------------- */
+.soundboard-container {
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.soundboard {
+  padding-top: 3vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 0.1fr 0.1fr 0.1fr;
+}
+
+.soundboard2 {
+  padding-top: 3vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr;
+}
+.key,
+.soundboard2 .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  border: 1.5px solid white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.key.active {
+  background-color: ghostwhite;
+}
+
+/* -------------- 1024px 보다 커지면(데스크탑 용) -------------- */
+@media (min-width: 1024px) {
+  .aboutMe-container,
+  .mypage-container {
+    padding-top: 17vh;
+  }
+
+  .list-container {
+    padding: 3vh 0;
+  }
+
+  .grid-container {
+    padding-bottom: 5vh;
+    gap: 3px;
+  }
+
+  .grid-container .content2 a {
+    font-size: 23px;
+  }
+
+  .grid-container .content {
+    height: 160px;
+    width: 160px;
+  }
+
+  .grid-container .content a {
+    font-size: 14px;
+  }
+
+  .grid-container .content p {
+    font-size: 12px;
+  }
+}
