@@ -8,7 +8,7 @@ async function loadGridView() {
     captions.forEach((doc) => {
       const caption = document.createElement("div");
       caption.classList.add("content");
-      caption.innerHTML = `<a href="posting.html?id=${doc.id}">${doc.title} 
+      caption.innerHTML = `<a href="post.html?id=${doc.id}">${doc.title} 
                 <br>by eelkom</a><p><br>HTML canvas<br>20X20(px)<br><br>${doc.summary}</p>`;
 
       gridContainer.appendChild(caption);
