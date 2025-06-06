@@ -1,5 +1,8 @@
 import { defineConfig } from "vite";
-import { resolve } from "path";
+import { sync } from "glob";
+import path from "path";
+
+const htmlFiles = sync("./src/**/*.html");
 
 export default defineConfig({
   root: "src",
@@ -7,11 +10,11 @@ export default defineConfig({
     outDir: "../dist",
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, "src/index.html"),
-        about: resolve(__dirname, "src/about.html"),
-        post: resolve(__dirname, "src/post.html"),
-      },
+      input: htmlFiles.reduce((entries, file) => {
+        const name = path.parse(file).name;
+        entries[name] = file;
+        return entries;
+      }, {}),
     },
   },
 });
